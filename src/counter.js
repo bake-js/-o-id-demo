@@ -1,8 +1,9 @@
-import { define, paint, on, repaint } from "@bake-js/element";
+import { define, on, paint, repaint } from "@bake-js/element";
 import component from "./component";
+import style from "./style";
 
 @define("element-counter")
-@paint(component)
+@paint(component, style)
 class Counter extends HTMLElement {
   #number;
 

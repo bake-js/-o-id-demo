@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "@bake-js/element": "^0.2.3"
+    "@bake-js/element": "^0.4.0"
   },
   "devDependencies": {
     "@babel/plugin-proposal-decorators": "^7.24.7",
