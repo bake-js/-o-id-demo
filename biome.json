@@ -4,6 +4,18 @@
     "enabled": true,
     "indentStyle": "space"
   },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "style": {
+        "noArguments": "off",
+        "useNodejsImportProtocol": "off"
+      },
+      "suspicious": {
+        "noAssignInExpressions": "off"
+      }
+    }
+  },
   "organizeImports": {
     "enabled": true
   }

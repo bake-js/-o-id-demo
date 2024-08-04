@@ -1,13 +1,12 @@
 import { resolve } from "path";
 import { defineConfig } from "vite";
-import babel from "vite-plugin-babel";
 
 export default defineConfig({
-  plugins: [
-    babel({
-      babelConfig: {
-        plugins: [["@babel/plugin-proposal-decorators", { legacy: true }]],
-      },
-    }),
-  ],
+  resolve: {
+    alias: {
+      element: resolve(__dirname, "packages/element"),
+      pixel: resolve(__dirname, "packages/pixel"),
+      standard: resolve(__dirname, "packages/standard"),
+    },
+  },
 });
