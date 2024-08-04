@@ -9,10 +9,20 @@ import style from "./style";
 @define("xyz-sign-in")
 @paint(component, style)
 class SignIn extends Echo(HTMLElement) {
+  @on.cancel("form")
+  [trait.cancel]() {
+    this.dispatchEvent(new CustomEvent("canceled"));
+    return this;
+  }
+
   @on.submit("form")
   @prevent
   [trait.submit](event) {
-    console.dir(new FormData(event.target, event.submitter));
+    const detail = Object.fromEntries(
+      new FormData(event.target, event.submitter),
+    );
+    this.dispatchEvent(new CustomEvent("submited", { detail }));
+    return this;
   }
 }
 

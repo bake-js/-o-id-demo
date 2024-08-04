@@ -16,10 +16,6 @@ class Password extends Echo(HTMLElement) {
   #message;
   #value;
 
-  get value() {
-    return (this.#value ??= "");
-  }
-
   get [trait.label]() {
     return "Password";
   }
@@ -30,6 +26,10 @@ class Password extends Echo(HTMLElement) {
 
   get [trait.type]() {
     return "password";
+  }
+
+  get [trait.value]() {
+    return (this.#value ??= "");
   }
 
   static get formAssociated() {
@@ -90,7 +90,7 @@ class Password extends Echo(HTMLElement) {
   }
 
   [__.isEmpty__]() {
-    return this.value;
+    return this[trait.value];
   }
 }
 

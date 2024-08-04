@@ -18,14 +18,6 @@ class Email extends Echo(HTMLElement) {
   #message;
   #value;
 
-  get value() {
-    return (this.#value ??= "");
-  }
-
-  set value(value) {
-    this.#value = value;
-  }
-
   get [trait.label]() {
     return "Email";
   }
@@ -34,12 +26,12 @@ class Email extends Echo(HTMLElement) {
     return (this.#message ??= "");
   }
 
-  set [trait.message](value) {
-    this.#message = value;
-  }
-
   get [trait.type]() {
     return "email";
+  }
+
+  get [trait.value]() {
+    return (this.#value ??= "");
   }
 
   static get formAssociated() {
@@ -55,7 +47,7 @@ class Email extends Echo(HTMLElement) {
   @on.change("input")
   @joinCut(trait.check)
   [trait.change](event) {
-    this.value = event.target.value;
+    this.#value = event.target.value;
     return this;
   }
 
@@ -65,18 +57,18 @@ class Email extends Echo(HTMLElement) {
   [trait.check](event) {
     if (f.isEmpty(this)) {
       this.#internals.states.add("invalid");
-      this[trait.message] = "Email is required";
+      this.#message = "Email is required";
       return this;
     }
 
     if (f.not.test(email, this)) {
       this.#internals.states.add("invalid");
-      this[trait.message] = "Email is not valid";
+      this.#message = "Email is not valid";
       return this;
     }
 
     this.#internals.states.delete("invalid");
-    this[trait.message] = "";
+    this.#message = "";
     return this;
   }
 
@@ -84,8 +76,8 @@ class Email extends Echo(HTMLElement) {
   @repaint
   [trait.reset]() {
     this.#internals.states.delete("invalid");
-    this[trait.message] = "";
-    this.value = "";
+    this.#message = "";
+    this.#value = "";
     return this;
   }
 
@@ -107,7 +99,7 @@ class Email extends Echo(HTMLElement) {
 
   @overload(__.test__)
   [__.isEmpty__]() {
-    return this.value;
+    return this[trait.value];
   }
 }
 
