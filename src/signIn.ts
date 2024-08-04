@@ -1,5 +1,7 @@
-import { define, on, paint } from "@bake-js/element";
+import { define } from "@bake-js/element";
+import { paint } from "@bake-js/element/dom";
 import Echo from "@bake-js/element/echo";
+import on, { prevent } from "@bake-js/element/event";
 import trait from "standard/trait";
 import component from "./component";
 import style from "./style";
@@ -8,8 +10,8 @@ import style from "./style";
 @paint(component, style)
 class SignIn extends Echo(HTMLElement) {
   @on.submit("form")
+  @prevent
   [trait.submit](event) {
-    event.preventDefault();
     console.dir(new FormData(event.target, event.submitter));
   }
 }

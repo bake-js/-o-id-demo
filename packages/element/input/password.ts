@@ -1,13 +1,7 @@
-import {
-  define,
-  didPaint,
-  formAssociated,
-  formReset,
-  on,
-  paint,
-  repaint,
-} from "@bake-js/element";
+import { define, formAssociated, formReset } from "@bake-js/element";
+import { didPaint, paint, repaint } from "@bake-js/element/dom";
 import Echo from "@bake-js/element/echo";
+import on, { prevent } from "@bake-js/element/event";
 import __ from "standard/dunder";
 import * as f from "standard/f";
 import joinCut from "standard/joinCut";
@@ -56,10 +50,9 @@ class Password extends Echo(HTMLElement) {
   }
 
   @on.invalid("*")
+  @prevent
   @repaint
   [trait.check](event) {
-    event?.preventDefault();
-
     if (f.isEmpty(this)) {
       this.#internals.states.add("invalid");
       this.#message = "Password is required";
