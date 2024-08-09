@@ -58,7 +58,7 @@ function style() {
       color: var(--color-master);
     }
 
-    .input__message {
+    .input__supportText {
       align-items: center;
       color: var(--color-master);
       display: flex;
@@ -75,6 +75,10 @@ function style() {
       }
     }
 
+    .input__supportText::before {
+      content: attr(data-text);
+      display: inline;
+    }
 
     :host(:state(invalid)) {
       .input__label {
@@ -85,7 +89,7 @@ function style() {
         border-color: var(--color-danger);
       }
 
-      .input__message {
+      .input__supportText {
         color: var(--color-danger);
       }
     }

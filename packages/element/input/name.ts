@@ -10,16 +10,14 @@ import on, { prevent } from "@bake-js/element/event";
 import __ from "standard/dunder";
 import * as f from "standard/f";
 import joinCut from "standard/joinCut";
-import overload from "standard/overload";
 import trait from "standard/trait";
 import component from "./component";
-import { email } from "./patterns";
 import style from "./style";
 import SupportText from "./supportText";
 
-@define("xyz-email")
+@define("xyz-name")
 @paint(component, style)
-class Email extends Echo(HTMLElement) {
+class Name extends Echo(HTMLElement) {
   #controller;
   #internals;
   #supportText;
@@ -30,11 +28,11 @@ class Email extends Echo(HTMLElement) {
   }
 
   get name() {
-    return "email";
+    return "name";
   }
 
   get type() {
-    return "email";
+    return "text";
   }
 
   get validationMessage() {
@@ -59,7 +57,7 @@ class Email extends Echo(HTMLElement) {
   }
 
   get [trait.label]() {
-    return "Email";
+    return "Name";
   }
 
   static get formAssociated() {
@@ -94,13 +92,7 @@ class Email extends Echo(HTMLElement) {
   [trait.check](event) {
     if (f.isEmpty(this)) {
       this.#internals.states.add("invalid");
-      this.#supportText.set("Email is required");
-      return this;
-    }
-
-    if (f.not.test(email, this)) {
-      this.#internals.states.add("invalid");
-      this.#supportText.set("Email is not valid");
+      this.#supportText.set("Name is required");
       return this;
     }
 
@@ -141,10 +133,9 @@ class Email extends Echo(HTMLElement) {
     return this;
   }
 
-  @overload(__.test__)
   [__.isEmpty__]() {
     return this.value;
   }
 }
 
-export default Email;
+export default Name;

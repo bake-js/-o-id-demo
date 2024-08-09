@@ -4,11 +4,9 @@ import trait from "standard/trait";
 function component(self) {
   return html`
     <div class='input__container'>
-      <label class='input__label' for='xyz'>${self[trait.label]}</label>
-      <input class='input' id='xyz' type='${self[trait.type]}' value='${self[trait.value]}' required />
-      <span class='input__message'>
-        ${self[trait.message]}
-      </span>
+      <label class='input__label' for='${self.name}'>${self[trait.label]}</label>
+      <input class='input' id='${self.name}' name='${self.name}' type='${self.type}' value='${self.value}' required />
+      <span class='input__supportText'></span>
     </div>
   `;
 }
