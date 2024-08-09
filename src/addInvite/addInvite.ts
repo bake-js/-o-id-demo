@@ -34,8 +34,10 @@ class AddInvite extends Echo(HTMLElement) {
   [trait.submit](event) {
     const formData = new FormData(event.target, event.submitter);
     const detail = Object.fromEntries(formData);
-    this.dispatchEvent(new CustomEvent("added", { detail }));
+    const options = { bubbles: true, cancelabel: true, detail };
+    this.dispatchEvent(new CustomEvent("added", options));
     this.#internals.states.delete("opened");
+    event.target.reset();
     return this;
   }
 }

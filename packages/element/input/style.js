@@ -86,6 +86,7 @@ function style() {
       }
 
       .input {
+        background-color: var(--color-danger-lighter);
         border-color: var(--color-danger);
       }
 

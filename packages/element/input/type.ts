@@ -81,6 +81,7 @@ class Type extends Echo(HTMLElement) {
   }
 
   @on.change("input")
+  @joinCut(trait.setValidity)
   @joinCut(trait.check)
   [trait.change](event) {
     this.#value = event.target.value;
@@ -108,10 +109,11 @@ class Type extends Echo(HTMLElement) {
   }
 
   @formReset
+  @joinCut(trait.setValidity)
   [trait.reset]() {
     this.#internals.states.delete("invalid");
     this.#supportText.remove();
-    this.#value = "";
+    this.value = "";
     return this;
   }
 

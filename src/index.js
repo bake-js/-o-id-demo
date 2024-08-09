@@ -4,3 +4,4 @@ import "element/input";
 
 import "./addInvite";
 import "./invite";
+import "./invites";

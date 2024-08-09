@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "@bake-js/element": "link:@bake-js/element",
+    "@bake-js/element": "0.14.4",
     "element": "workspace:*",
     "pixel": "workspace:*",
     "standard": "workspace:*"

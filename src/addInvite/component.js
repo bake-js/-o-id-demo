@@ -11,7 +11,7 @@ function component() {
       <form class='add-invite__form'>
         <h1 class='add-invite__form-user-heading'>Level permission</h1>
         <xyz-type class='add-invite__form-input'></xyz-type> 
-        <h2 class='add-invite__form-user-heading'>Users informations</h2>
+        <h2 class='add-invite__form-user-heading'>User information</h2>
         <xyz-name class='add-invite__form-input'></xyz-name>
         <xyz-email class='add-invite__form-input'></xyz-email>
         <footer class='add-invite__form-footer'>
