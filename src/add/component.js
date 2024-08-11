@@ -1,6 +1,6 @@
 import { html } from "@bake-js/element/dom";
 import trait from "standard/trait";
-import { add, person, remove } from "./icons";
+import { add } from "./icons";
 
 function component() {
   return html`

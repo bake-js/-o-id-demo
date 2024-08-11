@@ -3,9 +3,9 @@ const joinCut = (method) => {
     const substituted = descriptor.value ?? (() => undefined);
 
     Object.assign(descriptor, {
-      async value() {
-        await Reflect.apply(substituted, this, arguments);
-        await this[method]?.();
+      async value(...args) {
+        await Reflect.apply(substituted, this, args);
+        await this[method]?.(...args);
         return this;
       },
     });

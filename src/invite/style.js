@@ -63,6 +63,12 @@ function style() {
       border-color: var(--color-success);
       color: var(--color-master-lightest);
     }
+
+    :host(:state(invalid)) {
+      .invite__footer-send {
+        opacity: 0.32;
+      }
+    }
   `;
 }
 

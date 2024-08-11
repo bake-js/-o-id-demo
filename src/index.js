@@ -2,6 +2,6 @@ import "pixel/token";
 import "pixel/reset";
 import "element/input";
 
-import "./addInvite";
+import "./add";
 import "./invite";
-import "./invites";
+import "./users";

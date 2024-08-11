@@ -5,10 +5,10 @@ function component() {
     <section class='invite'>
       <h1 class='invite__heading'>Invite</h1>
       <div class='invite__container'>
-        <xyz-add-invite class='invite__add-invite' id="add-invite"></xyz-add-invite>
-        <xyz-invites class='invite__invites'>
-          <xyz-echo-source on="add-invite/added:method/push"></xyz-echo-source>
-        </xyz-invites>
+        <xyz-add-user class='invite__add-invite'></xyz-add-user>
+        <xyz-users class='invite__invites'>
+          <xyz-echo-source on="xyz-add-user/added:method/push"></xyz-echo-source>
+        </xyz-users>
       </div>
       <footer class='invite__footer'>
         <button class='invite__footer-cancel'>Cancel</button>

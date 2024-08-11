@@ -2,13 +2,16 @@ import { define } from "@bake-js/element";
 import { paint } from "@bake-js/element/dom";
 import Echo from "@bake-js/element/echo";
 import on, { prevent } from "@bake-js/element/event";
+import joinCut from "standard/joinCut";
 import trait from "standard/trait";
 import component from "./component";
+import formData from "./formData";
 import style from "./style";
+import uid from "./uid";
 
-@define("xyz-add-invite")
+@define("xyz-add-user")
 @paint(component, style)
-class AddInvite extends Echo(HTMLElement) {
+class Add extends Echo(HTMLElement) {
   #internals;
 
   constructor() {
@@ -17,29 +20,35 @@ class AddInvite extends Echo(HTMLElement) {
     this.#internals = this.attachInternals();
   }
 
-  @on.reset("form")
-  [trait.cancel]() {
-    this.#internals.states.delete("opened");
-    return this;
-  }
-
   @on.click("button.add-invite__add")
   [trait.open]() {
     this.#internals.states.add("opened");
     return this;
   }
 
+  @on.reset("form")
+  [trait.reset]() {
+    this.#internals.states.delete("opened");
+    return this;
+  }
+
   @on.submit("form")
   @prevent
+  @joinCut(trait.didSubmit)
   [trait.submit](event) {
-    const formData = new FormData(event.target, event.submitter);
-    const detail = Object.fromEntries(formData);
+    const detail = {
+      id: uid(),
+      ...formData(event),
+    };
     const options = { bubbles: true, cancelabel: true, detail };
     this.dispatchEvent(new CustomEvent("added", options));
-    this.#internals.states.delete("opened");
+    return this;
+  }
+
+  [trait.didSubmit](event) {
     event.target.reset();
     return this;
   }
 }
 
-export default AddInvite;
+export default Add;
