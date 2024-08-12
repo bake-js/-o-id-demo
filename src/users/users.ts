@@ -32,12 +32,13 @@ class Users extends Echo(HTMLElement) {
   }
 
   [trait.dispatchChanged]() {
+    const event = new CustomEvent("changed");
     const config = {
       bubbles: true,
       cancelable: true,
       detail: this[trait.invites],
     };
-    this.dispatchEvent(new CustomEvent("changed", config));
+    this.dispatchEvent(event, config);
     return this;
   }
 

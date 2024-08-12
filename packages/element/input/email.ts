@@ -90,8 +90,7 @@ class Email extends Echo(HTMLElement) {
     return this;
   }
 
-  @on.invalid("*")
-  @prevent
+  @on.invalid("*", prevent)
   [trait.check](event) {
     if (f.isEmpty(this)) {
       this.#internals.states.add("invalid");

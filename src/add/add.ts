@@ -32,8 +32,7 @@ class Add extends Echo(HTMLElement) {
     return this;
   }
 
-  @on.submit("form")
-  @prevent
+  @on.submit("form", prevent)
   @joinCut(trait.didSubmit)
   [trait.submit](event) {
     const detail = {

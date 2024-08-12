@@ -13,14 +13,14 @@ import joinCut from "standard/joinCut";
 import trait from "standard/trait";
 import component from "./component";
 import style from "./style";
-import supportText from "./supportText";
+import SupportText from "./supportText";
 
 @define("xyz-type")
 @paint(component, style)
 class Type extends Echo(HTMLElement) {
-  #controller;
-  #internals;
-  #supportText;
+  #controller = new AbortController();
+  #internals = this.attachInternals();
+  #supportText = SupportText.from(this);
   #value;
 
   get form() {
@@ -67,9 +67,6 @@ class Type extends Echo(HTMLElement) {
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
-    this.#internals = this.attachInternals();
-    this.#controller = new AbortController();
-    this.#supportText = supportText.from(this);
   }
 
   checkValidity() {
@@ -88,8 +85,7 @@ class Type extends Echo(HTMLElement) {
     return this;
   }
 
-  @on.invalid("*")
-  @prevent
+  @on.invalid("*", prevent)
   [trait.check](event) {
     if (f.isEmpty(this)) {
       this.#internals.states.add("invalid");
