@@ -1,12 +1,13 @@
 import {
+  attributeChanged,
   define,
   disconnected,
   formAssociated,
   formReset,
-} from "@bake-js/element";
-import { didPaint, paint } from "@bake-js/element/dom";
-import Echo from "@bake-js/element/echo";
-import on, { prevent } from "@bake-js/element/event";
+} from "@bake-js/-o-id";
+import { didPaint, paint } from "@bake-js/-o-id/dom";
+import Echo from "@bake-js/-o-id/echo";
+import on, { prevent, value } from "@bake-js/-o-id/event";
 import __ from "standard/dunder";
 import * as f from "standard/f";
 import joinCut from "standard/joinCut";
@@ -18,9 +19,9 @@ import SupportText from "./supportText";
 @define("xyz-type")
 @paint(component, style)
 class Type extends Echo(HTMLElement) {
-  #controller = new AbortController();
-  #internals = this.attachInternals();
-  #supportText = SupportText.from(this);
+  #controller;
+  #internals;
+  #supportText;
   #value;
 
   get form() {
@@ -47,9 +48,10 @@ class Type extends Echo(HTMLElement) {
     return (this.#value ??= "");
   }
 
+  @joinCut(trait.check)
+  @joinCut(trait.setValidity)
   set value(value) {
     this.#value = value;
-    this.shadowRoot.querySelector("input").value = value;
   }
 
   get willValidate() {
@@ -67,6 +69,9 @@ class Type extends Echo(HTMLElement) {
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
+    this.#controller = new AbortController();
+    this.#internals = this.attachInternals();
+    this.#supportText = SupportText.from(this);
   }
 
   checkValidity() {
@@ -77,16 +82,15 @@ class Type extends Echo(HTMLElement) {
     return this.#internals.reportValidity();
   }
 
-  @on.change("input")
-  @joinCut(trait.setValidity)
-  @joinCut(trait.check)
-  [trait.change](event) {
-    this.#value = event.target.value;
+  @on.change("input", value)
+  @attributeChanged("value")
+  [trait.change](value) {
+    this.value = value;
     return this;
   }
 
   @on.invalid("*", prevent)
-  [trait.check](event) {
+  [trait.check]() {
     if (f.isEmpty(this)) {
       this.#internals.states.add("invalid");
       this.#supportText.set("Type is required");
@@ -105,7 +109,6 @@ class Type extends Echo(HTMLElement) {
   }
 
   @formReset
-  @joinCut(trait.setValidity)
   [trait.reset]() {
     this.#internals.states.delete("invalid");
     this.#supportText.remove();

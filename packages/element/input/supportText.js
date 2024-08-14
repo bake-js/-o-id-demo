@@ -5,7 +5,7 @@ class SupportText {
     this.#element = element;
   }
 
-  set(value) {
+  set(value = "") {
     this.#element.shadowRoot
       .querySelector("span.input__supportText")
       .setAttribute("data-text", value);

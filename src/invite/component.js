@@ -1,4 +1,4 @@
-import { html } from "@bake-js/element/dom";
+import { html } from "@bake-js/-o-id/dom";
 
 function component() {
   return html`
@@ -7,7 +7,7 @@ function component() {
       <div class='invite__container'>
         <xyz-add-user class='invite__add-invite'></xyz-add-user>
         <xyz-users class='invite__invites'>
-          <xyz-echo-source on="xyz-add-user/added:method/push"></xyz-echo-source>
+          <o-id-echo-source on="xyz-add-user/added:method/push"></xyz-echo-source>
         </xyz-users>
       </div>
       <footer class='invite__footer'>

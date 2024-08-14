@@ -1,7 +1,7 @@
-import { define } from "@bake-js/element";
-import { paint, repaint } from "@bake-js/element/dom";
-import Echo from "@bake-js/element/echo";
-import on from "@bake-js/element/event";
+import { define } from "@bake-js/-o-id";
+import { paint, repaint } from "@bake-js/-o-id/dom";
+import Echo from "@bake-js/-o-id/echo";
+import on from "@bake-js/-o-id/event";
 import joinCut from "standard/joinCut";
 import trait from "standard/trait";
 import component from "./component";

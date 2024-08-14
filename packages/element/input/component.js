@@ -1,4 +1,4 @@
-import { html } from "@bake-js/element/dom";
+import { html } from "@bake-js/-o-id/dom";
 import trait from "standard/trait";
 
 function component(self) {

@@ -3,10 +3,10 @@ import {
   disconnected,
   formAssociated,
   formReset,
-} from "@bake-js/element";
-import { didPaint, paint } from "@bake-js/element/dom";
-import Echo from "@bake-js/element/echo";
-import on, { prevent } from "@bake-js/element/event";
+} from "@bake-js/-o-id";
+import { didPaint, paint } from "@bake-js/-o-id/dom";
+import Echo from "@bake-js/-o-id/echo";
+import on, { prevent } from "@bake-js/-o-id/event";
 import __ from "standard/dunder";
 import * as f from "standard/f";
 import joinCut from "standard/joinCut";

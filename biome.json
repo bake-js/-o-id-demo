@@ -7,6 +7,9 @@
   "linter": {
     "enabled": true,
     "rules": {
+      "correctness": {
+        "noInvalidUseBeforeDeclaration": "off"
+      },
       "style": {
         "noArguments": "off",
         "useNodejsImportProtocol": "off"
