@@ -62,7 +62,7 @@ class NumberOfPeople extends Echo(HTMLElement) {
   }
 
   get [trait.label]() {
-    return "Number of people";
+    return "Number of People";
   }
 
   get [trait.min]() {

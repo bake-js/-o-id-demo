@@ -62,7 +62,7 @@ class SelectTip extends Echo(HTMLElement) {
   }
 
   get [trait.label]() {
-    return "Select tip";
+    return "Select Tip";
   }
 
   get [trait.min]() {
