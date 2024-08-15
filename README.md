@@ -4,40 +4,29 @@ Este é um projeto de demonstração que utiliza a biblioteca **-o-id** para cri
 
 ![Splitter](https://github.com/bake-js/-o-id-demo/blob/main/-O-id_Splitter.png)
 
-## Visão Geral
+## Visão Geral do Sistema
 
-O **-o-id Splitter** permite que o usuário insira o valor total da conta, selecione uma porcentagem de gorjeta e especifique o número de pessoas entre as quais a conta deve ser dividida. O aplicativo então calcula a gorjeta por pessoa e o total por pessoa em tempo real, utilizando componentes reativos do **-o-id**.
+O **-o-id Splitter** é uma aplicação web interativa que permite aos usuários dividir o valor de uma conta entre várias pessoas, incluindo o cálculo da gorjeta. A arquitetura do sistema é composta por:
 
-## Tecnologias Utilizadas
+- **Frontend**: Desenvolvido em HTML, CSS e JavaScript, com componentes personalizados criados com a biblioteca **-o-id**.
+- **Módulo de Eventos**: Gerenciamento de eventos assíncronos com o módulo **Echo** do **-o-id**, que permite a comunicação reativa entre componentes.
+- **Servidor de Desenvolvimento**: Servidor local fornecido pelo Bun para desenvolvimento e testes.
+
+### Tecnologias Utilizadas
 
 - **-o-id**: Biblioteca principal para a criação de componentes Web personalizados.
 - **JavaScript**: Lógica do aplicativo e manipulação de componentes.
 - **HTML**: Estrutura do aplicativo.
 - **CSS**: Estilização da interface do usuário.
+- **Bun**: Gerenciador de pacotes e servidor de desenvolvimento.
 
-## Componentes
+### Diagrama de Contexto
 
-### Estrutura Principal
+No contexto do **-o-id Splitter**, o usuário interage com a interface web, que comunica com o backend através de eventos reativos. O diagrama de contexto seria simples, mostrando as interações básicas entre o usuário e o sistema através dos componentes de interface.
 
-A estrutura principal do aplicativo é composta por uma seção (`section`) que contém o formulário de entrada de dados e o resultado. A seguir estão os principais componentes utilizados:
+## Arquitetura Interna
 
-- **`<o-id-bill>`**: Componente para inserir o valor da conta.
-- **`<o-id-select-tip>`**: Componente para selecionar a porcentagem de gorjeta.
-- **`<o-id-number-of-people>`**: Componente para inserir o número de pessoas.
-- **`<o-id-tip-amount>`**: Componente para calcular e exibir a gorjeta por pessoa.
-- **`<o-id-total>`**: Componente para calcular e exibir o total por pessoa.
-
-### Comunicação entre Componentes
-
-A comunicação entre os componentes é gerenciada pelo barramento de eventos do **-o-id** usando o módulo **Echo**. Cada vez que o valor do `bill`, `tip`, ou `numberofpeople` é alterado, os componentes de resultado (`<o-id-tip-amount>` e `<o-id-total>`) são atualizados automaticamente.
-
-Exemplo de como os eventos são escutados:
-
-```html
-<o-id-echo-source on='o-id-bill/changed:attribute/bill'></o-id-echo-source>
-<o-id-echo-source on='o-id-select-tip/changed:attribute/tip'></o-id-echo-source>
-<o-id-echo-source on='o-id-number-of-people/changed:attribute/numberofpeople'></o-id-echo-source>
-```
+Para mais detalhes sobre a arquitetura interna do **-o-id Splitter**, incluindo a estrutura de componentes e a lógica de negócio, consulte o [README dentro do diretório `src`](https://github.com/bake-js/-o-id-demo/blob/main/src/README.md).
 
 ## Como Executar o Projeto
 
@@ -74,10 +63,6 @@ bun dev
 ```
 
 Abra seu navegador e acesse `http://localhost:5173` para ver o aplicativo em ação.
-
-## Personalização
-
-Você pode personalizar os componentes e o estilo do aplicativo ajustando o código dentro do projeto. A estrutura modular do **-o-id** facilita a adição de novos recursos ou a alteração do comportamento dos componentes existentes.
 
 ## Contribuição
 
