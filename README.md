@@ -2,7 +2,7 @@
 
 Este é um projeto de demonstração que utiliza a biblioteca **-o-id** para criar um aplicativo simples de divisão de contas, chamado **-o-id Splitter**. Este demo destaca como usar componentes personalizados do **-o-id** para criar uma interface interativa e eficiente.
 
-![Splitter](https://github.com/bake-js/-o-id-demo/blob/main/-O-id_splitter.png)
+![Splitter](https://github.com/bake-js/-o-id-demo/blob/main/-O-id_Splitter.png)
 
 ## Visão Geral
 
