@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "@bake-js/-o-id": "0.0.13",
+    "@bake-js/-o-id": "0.0.14",
     "element": "workspace:*",
     "pixel": "workspace:*",
     "standard": "workspace:*"

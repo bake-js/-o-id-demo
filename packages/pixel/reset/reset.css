@@ -7,11 +7,5 @@
 }
 
 body {
-  background-color: var(--color-master-lightest);
-}
-
-main {
-  margin: 0 auto;
-  max-width: 960px;
-  padding: var(--spacing_inset-sm);
+  background-color: var(--color-primary-lighter);
 }

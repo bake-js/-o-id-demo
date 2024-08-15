@@ -2,6 +2,9 @@ import "pixel/token";
 import "pixel/reset";
 import "element/input";
 
-import "./add";
-import "./invite";
-import "./users";
+import "./bill";
+import "./numberOfPeople";
+import "./selectTip";
+import "./splitter";
+import "./tipAmount";
+import "./total";
