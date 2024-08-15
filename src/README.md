@@ -41,19 +41,3 @@ Cada componente pode ser customizado de acordo com as necessidades do projeto. A
 ## Testes
 
 Os componentes podem ser testados individualmente para garantir que a comunicação através do **Echo** funciona conforme o esperado. Recomenda-se o uso de ferramentas de testes unitários para validar a lógica de negócio encapsulada em cada componente.
-
-### Estrutura de Arquivos
-
-No GitHub, a estrutura ficaria organizada da seguinte forma:
-
-```
-- / (root)
-  - README.md (Visão Geral do Sistema - Nível 1)
-  - /src
-    - README.md (Arquitetura Interna - Nível 2)
-    - /bill
-    - /selectTip
-    - /numberOfPeople
-    - /tipAmount
-    - /total
-```
