@@ -54,7 +54,7 @@ Exemplo de como os eventos são escutados:
 2. Navegue até o diretório do projeto:
 
    ```bash
-   cd o-id-splitter-demo
+   cd o-id-demo
    ```
 
 3. Instale as dependências:
