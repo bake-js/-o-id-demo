@@ -26,22 +26,15 @@ No contexto do **-o-id Splitter**, o usuário interage com a interface web, que 
 
 ## Arquitetura Interna
 
-Para mais detalhes sobre a arquitetura interna do **-o-id Splitter**, incluindo a estrutura de componentes e a lógica de negócio, consulte o índice abaixo para encontrar os README relevantes:
+Para mais detalhes sobre a arquitetura interna do **-o-id Splitter**, incluindo a estrutura de componentes e a lógica de negócio, consulte o índice abaixo:
 
-- **/ (root)**
-  - [README.md](https://github.com/bake-js/-o-id-demo/blob/main/README.md)
-  - **/src**
-    - [README.md](https://github.com/bake-js/-o-id-demo/blob/main/src/README.md)
-    - **/bill**
-      - [README.md](https://github.com/bake-js/-o-id-demo/blob/main/src/bill/README.md)
-    - **/selectTip**
-      - [README.md](https://github.com/bake-js/-o-id-demo/blob/main/src/selectTip/README.md)
-    - **/numberOfPeople**
-      - [README.md](https://github.com/bake-js/-o-id-demo/blob/main/src/numberOfPeople/README.md)
-    - **/tipAmount**
-      - [README.md](https://github.com/bake-js/-o-id-demo/blob/main/src/tipAmount/README.md)
-    - **/total**
-      - [README.md](https://github.com/bake-js/-o-id-demo/blob/main/src/total/README.md)
+- **[Arquitetura Interna do -O-id Splitter](https://github.com/bake-js/-o-id-demo/blob/main/src/README.md)**
+- **[`<o-id-bill>`](https://github.com/bake-js/-o-id-demo/blob/main/src/bill/README.md)**
+- **[`<o-id-select-tip>`](https://github.com/bake-js/-o-id-demo/blob/main/src/selectTip/README.md)**
+- **[`<o-id-number-of-people>`](https://github.com/bake-js/-o-id-demo/blob/main/src/numberOfPeople/README.md)**
+- **[`<o-id-tip-amount>`](https://github.com/bake-js/-o-id-demo/blob/main/src/tipAmount/README.md)**
+- **[`<o-id-total>`](https://github.com/bake-js/-o-id-demo/blob/main/src/total/README.md)**
+
 
 ## Como Executar o Projeto
 

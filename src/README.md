@@ -1,12 +1,12 @@
-# Arquitetura Interna do -o-id Splitter
+# Arquitetura Interna do -O-id Splitter
 
-Este documento oferece uma visão detalhada da arquitetura interna do **-o-id Splitter**, com foco nos componentes principais, comunicação entre eles, lógica de negócio, estilização, personalização e testes. A arquitetura é construída de forma modular, aproveitando ao máximo os recursos oferecidos pela biblioteca **-o-id**.
+Este documento oferece uma visão detalhada da arquitetura interna do **-O-id Splitter**, com foco nos componentes principais, comunicação entre eles, lógica de negócio, estilização, personalização e testes. A arquitetura é construída de forma modular, aproveitando ao máximo os recursos oferecidos pela biblioteca **-O-id**.
 
 ## Componentes Principais
 
 ### Estrutura de Pastas
 
-A estrutura do projeto é organizada em diretórios que correspondem aos principais componentes do **-o-id Splitter**. Cada pasta contém a lógica específica, o estilo e os módulos necessários para o funcionamento de um componente individual.
+A estrutura do projeto é organizada em diretórios que correspondem aos principais componentes do **-O-id Splitter**. Cada pasta contém a lógica específica, o estilo e os módulos necessários para o funcionamento de um componente individual.
 
 - **`bill/`**: Contém o componente `<o-id-bill>`, responsável por capturar o valor total da conta.  
   - Módulos principais: `component`, `style`
@@ -25,7 +25,7 @@ A estrutura do projeto é organizada em diretórios que correspondem aos princip
 
 ### Comunicação entre Componentes
 
-A comunicação entre os componentes do **-o-id Splitter** é gerida pelo módulo **Echo** do **-o-id**. O Echo atua como um barramento de eventos, permitindo que componentes disparem e respondam a eventos de maneira eficiente e desacoplada. 
+A comunicação entre os componentes do **-O-id Splitter** é gerida pelo módulo **Echo** do **-O-id**. O Echo atua como um barramento de eventos, permitindo que componentes disparem e respondam a eventos de maneira eficiente e desacoplada. 
 
 #### Exemplo de Comunicação com Echo
 
@@ -60,7 +60,7 @@ A modularidade dos componentes facilita a personalização. Desenvolvedores pode
 
 ### Testes
 
-Os componentes do **-o-id Splitter** são projetados para serem testáveis de forma isolada. A comunicação baseada em eventos via **Echo** facilita a verificação do comportamento dinâmico dos componentes. Recomenda-se o uso de ferramentas de testes unitários para garantir que:
+Os componentes do **-O-id Splitter** são projetados para serem testáveis de forma isolada. A comunicação baseada em eventos via **Echo** facilita a verificação do comportamento dinâmico dos componentes. Recomenda-se o uso de ferramentas de testes unitários para garantir que:
 
 - **Lógica de Negócio**: A lógica encapsulada em cada componente funciona corretamente com diferentes entradas.
 - **Comunicação entre Componentes**: Os eventos disparam conforme esperado e os componentes respondem apropriadamente às mudanças de estado.
