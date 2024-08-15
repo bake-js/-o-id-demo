@@ -26,7 +26,15 @@ No contexto do **-o-id Splitter**, o usuário interage com a interface web, que 
 
 ## Arquitetura Interna
 
-Para mais detalhes sobre a arquitetura interna do **-o-id Splitter**, incluindo a estrutura de componentes e a lógica de negócio, consulte o [README dentro do diretório `src`](https://github.com/bake-js/-o-id-demo/blob/main/src/README.md).
+Para mais detalhes sobre a arquitetura interna do **-o-id Splitter**, incluindo a estrutura de componentes e a lógica de negócio, consulte o índice abaixo para encontrar os README relevantes:
+
+- **/**
+  - **[/src](https://github.com/bake-js/-o-id-demo/blob/main/src/README.md)**
+    - **[/bill](https://github.com/bake-js/-o-id-demo/blob/main/src/bill/README.md)**
+    - **[/selectTip](https://github.com/bake-js/-o-id-demo/blob/main/src/selectTip/README.md)**
+    - **[/numberOfPeople](https://github.com/bake-js/-o-id-demo/blob/main/src/numberOfPeople/README.md)**
+    - **[/tipAmount](https://github.com/bake-js/-o-id-demo/blob/main/src/tipAmount/README.md)**
+    - **[/total](https://github.com/bake-js/-o-id-demo/blob/main/src/total/README.md)**
 
 ## Como Executar o Projeto
 
