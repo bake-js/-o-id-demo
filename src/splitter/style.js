@@ -30,8 +30,8 @@ function component() {
     }
 
     .splitter__form {
-      background-color: var(--color-pure-white);
-      border-radius: var(--border-radius-md);
+      background-color: var(--color-master-lightest);
+      border-radius: var(--border-radius-lg);
       display: flex;
       flex-direction: column;
       gap: var(--spacing_inset-sm);
@@ -60,7 +60,7 @@ function component() {
 
     .splitter__result {
       background-color: var(--color-primary);
-      border-radius: var(--border-radius-sm);
+      border-radius: var(--border-radius-md);
       display: flex;
       flex-direction: column;
       gap: var(--spacing_inset-sm);
