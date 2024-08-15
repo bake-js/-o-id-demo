@@ -72,6 +72,14 @@ bun dev
 
 Abra seu navegador e acesse `http://localhost:5173` para ver o aplicativo em ação.
 
+## Sobre a Biblioteca -O-id
+
+Para entender melhor como os componentes do **-O-id Splitter** foram implementados e explorar mais sobre as funcionalidades da biblioteca, visite o repositório oficial da [**-O-id**](https://github.com/bake-js/-o-id). 
+
+A biblioteca **-O-id** fornece um conjunto poderoso de ferramentas para criar e gerenciar componentes Web personalizados com facilidade. Com uma abordagem moderna e flexível, ela permite que desenvolvedores criem interfaces interativas e reativas, simplificando o desenvolvimento de aplicações complexas.
+
+Confira a documentação detalhada, exemplos e tutoriais no repositório para aprofundar seu conhecimento e começar a utilizar o **-O-id** em seus próprios projetos.
+
 ## Contribuição
 
 Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou enviar pull requests para melhorias ou novos recursos.
