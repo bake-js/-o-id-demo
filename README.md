@@ -41,8 +41,7 @@ Exemplo de como os eventos são escutados:
 
 ### Pré-requisitos
 
-- Node.js instalado
-- npm ou yarn
+- Bun instalado
 
 ### Instalação
 
