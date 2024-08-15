@@ -7,6 +7,7 @@ import {
 import { didPaint, paint } from "@bake-js/-o-id/dom";
 import Echo from "@bake-js/-o-id/echo";
 import on, { prevent } from "@bake-js/-o-id/event";
+import IMask from "artifact/imask";
 import __ from "standard/dunder";
 import * as f from "standard/f";
 import joinCut from "standard/joinCut";
@@ -20,6 +21,7 @@ import SupportText from "./supportText";
 class Bill extends Echo(HTMLElement) {
   #controller;
   #internals;
+  #mask;
   #supportText;
   #value;
 
@@ -116,9 +118,31 @@ class Bill extends Echo(HTMLElement) {
     return this;
   }
 
+  @didPaint
+  [trait.mask]() {
+    const element = this.shadowRoot.querySelector("input");
+    const options = {
+      mask: Number,
+      scale: 2,
+      signed: false,
+      thousandsSeparator: ",",
+      padFractionalZeros: true,
+      normalizeZeros: true,
+      radix: ".",
+      mapToRadix: ["."],
+      min: 0,
+      max: 1000000,
+    };
+
+    this.#mask?.destroy();
+    this.#mask = IMask(element, options);
+    return this;
+  }
+
   @disconnected
   [trait.remove]() {
     this.#controller.abort();
+    this.#mask.destroy();
     return this;
   }
 

@@ -20,6 +20,7 @@ import SupportText from "../bill/supportText";
 class SelectTip extends Echo(HTMLElement) {
   #controller;
   #internals;
+  #mask;
   #supportText;
   #value;
 
@@ -118,9 +119,28 @@ class SelectTip extends Echo(HTMLElement) {
     return this;
   }
 
+  @didPaint
+  [trait.mask]() {
+    const element = this.shadowRoot.querySelector("input");
+    const options = {
+      mask: Number,
+      min: 0,
+      max: 100,
+      scale: 0,
+      signed: false,
+      thousandsSeparator: "",
+      padFractionalZeros: false,
+    };
+
+    this.#mask?.destroy();
+    this.#mask = IMask(element, options);
+    return this;
+  }
+
   @disconnected
   [trait.remove]() {
     this.#controller.abort();
+    this.#mask.destroy();
     return this;
   }
 
