@@ -32,6 +32,7 @@ Para mais detalhes sobre a arquitetura interna do **-O-id Splitter**, incluindo 
 - **[`<o-id-bill>`](https://github.com/bake-js/-O-id-demo/blob/main/src/bill/README.md)**
 - **[`<o-id-select-tip>`](https://github.com/bake-js/-O-id-demo/blob/main/src/selectTip/README.md)**
 - **[`<o-id-number-of-people>`](https://github.com/bake-js/-O-id-demo/blob/main/src/numberOfPeople/README.md)**
+- **[`<o-id-splitter>`](https://github.com/bake-js/-O-id-demo/blob/main/src/splitter/README.md)**
 - **[`<o-id-tip-amount>`](https://github.com/bake-js/-O-id-demo/blob/main/src/tipAmount/README.md)**
 - **[`<o-id-total>`](https://github.com/bake-js/-O-id-demo/blob/main/src/total/README.md)**
 
